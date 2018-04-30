@@ -1,0 +1,9 @@
+.newPostDiv{
+    height: 30%; 
+    width: 90%;
+    }
+
+.validation-error {
+    display: block;
+    color: red;
+}

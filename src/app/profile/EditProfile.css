@@ -1,0 +1,22 @@
+.imagePost{
+    width: 130px;
+    
+}
+.modalDiv{
+    width: 70%;
+    padding: 0 15px 0 15px;
+}
+.modal-content{
+    padding: 15px;
+    padding-top:0
+
+}
+h5{
+    margin-top: 0
+}
+h2.profileName{
+    margin-left: 0
+}
+#modal1{
+    height: 700px
+}

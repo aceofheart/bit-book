@@ -1,0 +1,26 @@
+.profileImage {
+    margin-top: 50px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%
+}
+.profileName{
+    text-align: center;
+}
+.details{
+    width: 60%;
+    margin: 20px auto;
+    margin-bottom: 200px
+}
+
+.aboutUser{
+    color:grey;
+    text-align: center
+ 
+}
+.profileBox{
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+
+}

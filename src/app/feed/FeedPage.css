@@ -1,0 +1,70 @@
+p{
+    color:white;
+    padding: 0 20px 5px 20px;
+    display: inline-block;
+}
+img {
+    width: 95%;
+    height: auto;
+    margin: 0 auto
+}
+.postBox{
+    background-color: whitesmoke
+}
+div .card-action{
+    padding:3px;
+}
+
+iframe {
+
+    position: relative;
+    display:block;
+    width:95%;
+    height:100%;
+    margin: 0 auto;
+}
+.comments{
+    float:right;
+
+}
+
+.circle {
+    border: 1px solid gray;
+    border-radius : 50%;
+    margin:5px;
+    width: 60px;
+    height: 60px;
+    display: block;
+}
+
+.marginTop {
+    margin-top: 20px;
+}
+.commDiv{
+    height: 100px;
+}
+.textUser{
+padding: 5px;
+margin-left: 10px
+}
+.btnDelete{
+    float: left;
+    z-index:9999999
+}
+.character-counter{
+    display: none
+}
+.searchBar{
+    margin-top:20px
+}
+.postType{
+    width: 30%;
+    float: right;
+    
+}
+nav{
+    margin-bottom: 20px;
+}
+li > span{
+    margin: 5px;
+}

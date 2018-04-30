@@ -1,0 +1,27 @@
+.date {
+float: right;
+font-weight: bold;
+width: 30%;
+text-align: center;
+font-size: 0.8em
+}
+.date span{
+    display: block;
+    margin:0
+}
+
+img {
+    display: inline;
+}
+
+span {
+    margin-left: 75px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+nav, nav{
+    background-color: rgb(102, 102, 102)
+}
+.row .col.s12{
+    padding: 7px
+}
