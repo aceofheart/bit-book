@@ -21,7 +21,7 @@ import { authenticationService } from "../../services/LogInService";
         });
   }
   onRegisterButton = (event) =>{
-   
+   event.preventDefault();
     const data={
         username: this.state.username,
         password: this.state.password,
@@ -36,6 +36,7 @@ import { authenticationService } from "../../services/LogInService";
         
        
     })
+   
     
   }
 
@@ -46,7 +47,7 @@ import { authenticationService } from "../../services/LogInService";
                 <div id="signup">
                     <h3>Join us</h3>
                     <div className="registerForm">
-                    <form className="col s12">
+                    <div className="col s12">
                             <div className="top-row">
                                     <div className="fieldWwrap">
                                         <label>Username<span className="req">*</span></label>
@@ -67,7 +68,7 @@ import { authenticationService } from "../../services/LogInService";
                                         <input onChange={this.getDataFromInputs} name="password" className="logInInput" type="password" required autoComplete="off"/>
                                     </div>
                                     <button onClick={this.onRegisterButton} className="button button-block">Sign up</button>
-                        </form>
+                        </div>
                     </div>
                         <div className="lorem hide-on-med-and-down">
                             <h2>Bit book Register</h2>

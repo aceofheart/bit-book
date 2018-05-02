@@ -27,7 +27,7 @@ import { withRouter } from 'react-router-dom'
     }
 
     loginProfile = (event) => {
-        
+        event.preventDefault()
 
         authenticationService.login(this.state.username, this.state.password)
             .then((response) => {
@@ -50,7 +50,7 @@ import { withRouter } from 'react-router-dom'
             
             <div id="login">
                 <h3>Welcome back</h3>
-                <form className="col s12">
+                <div className="col s12">
                     <div className="fieldWrap input-field col s12">
                         <label>Username<span className="req">*</span></label>
                         <input onChange={this.handleInputChange} className="logInInput validate" name="username" type="text" required autoComplete="off"/>
@@ -62,7 +62,7 @@ import { withRouter } from 'react-router-dom'
                     <p className="validation-error">{this.state.error}</p>
                     <button onClick={this.loginProfile} className="button button-block">Log in</button>
 
-                </form>
+                </div>
             </div>
             <div className="lorem hide-on-med-and-down">
                 <h2>Bit book Log in</h2>
