@@ -21,7 +21,7 @@ import { authenticationService } from "../../services/LogInService";
         });
   }
   onRegisterButton = (event) =>{
-   event.preventDefault();
+   
     const data={
         username: this.state.username,
         password: this.state.password,
@@ -46,6 +46,7 @@ import { authenticationService } from "../../services/LogInService";
                 <div id="signup">
                     <h3>Join us</h3>
                     <div className="registerForm">
+                    <form className="col s12">
                             <div className="top-row">
                                     <div className="fieldWwrap">
                                         <label>Username<span className="req">*</span></label>
@@ -56,18 +57,19 @@ import { authenticationService } from "../../services/LogInService";
                                         <input onChange={this.getDataFromInputs} name="name" className="logInInput" type="text" required autoComplete="off" />
                                     </div>
                             </div>
-                                    <div className="fieldWrap">
+                                    <div className="fieldWrap input-field col s12">
                                         <label>Email address<span className="req">*</span></label>
-                                        <input onChange={this.getDataFromInputs} name="email" className="logInInput" type="email" required autoComplete="off" />
+                                        <input onChange={this.getDataFromInputs} name="email" id="email" className="logInInput validate" type="email" required autoComplete="off" />
+                                        <span className="helper-text" data-error="invalid email" data-success="right"></span>
                                     </div>
                                     <div className="fieldWrap">
                                         <label>Password<span className="req">*</span></label>
                                         <input onChange={this.getDataFromInputs} name="password" className="logInInput" type="password" required autoComplete="off"/>
                                     </div>
                                     <button onClick={this.onRegisterButton} className="button button-block">Sign up</button>
-                        
+                        </form>
                     </div>
-                        <div className="lorem">
+                        <div className="lorem hide-on-med-and-down">
                             <h2>Bit book Register</h2>
                             <p className="loremText">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
                         </div>
