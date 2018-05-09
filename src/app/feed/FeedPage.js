@@ -18,38 +18,35 @@ export class FeedPage extends Component {
 
     }
     
+  
     componentDidMount() {
-    
-      this.loadPosts();
         
+        this.loadPosts();
         const elem = document.querySelector('select');
         const instance = M.FormSelect.init(elem)
     }
-    componentWillUpdate(nextProps,nextState){
-      
-        if(nextState.postType === "all"){
+
+    componentWillUpdate(nextProps, nextState) {
+        if (nextState.postType === "all") {
             this.loadPosts();
-        }else if(nextState.postType !== this.state.postType){
+        } else if (nextState.postType !== this.state.postType) {
             this.renderFilteredPosts(nextState);
         }
     }
-    
-    
-  
-    getFilterValue = (event) =>{
+
+
+
+    getFilterValue = (event) => {
         this.setState({
             postType: event.target.value
-      })
+        })
     }
 
     loadPosts = () => {
-        
-        postService.getData()
+         postService.getData()
             .then(myPosts => {
-                this.setState({ posts: myPosts, filteredPosts: myPosts })
+              this.setState({ posts: myPosts, filteredPosts: myPosts })
             })
-     
-        
     }
 
 
@@ -80,10 +77,10 @@ export class FeedPage extends Component {
     renderFilteredPosts = (nextState) => {
         const type = nextState.postType;
         const { posts } = nextState;
-        const filtered = posts.filter(post =>{
+        const filtered = posts.filter(post => {
             return post.type === type;
-        }) 
-     
+        })
+
         this.setState({
             filteredPosts: filtered
         })
@@ -93,7 +90,7 @@ export class FeedPage extends Component {
         return (
             <Fragment>
                 <div className="container">
-                <FilterPosts filter={this.getFilterValue}/>
+                    <FilterPosts filter={this.getFilterValue} />
                     <div className="row">
                         {this.renderPosts()}
                     </div>

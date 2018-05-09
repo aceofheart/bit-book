@@ -8,9 +8,9 @@ import { authenticationService } from "../../services/LogInService";
         username: null,
         name: null,
         email: null,
-        password: null
+        password: null,
     }
-
+    
     getDataFromInputs = (event) =>{
         const target = event.target;
         const value = target.value;
@@ -20,8 +20,9 @@ import { authenticationService } from "../../services/LogInService";
             [name]: value
         });
   }
+
   onRegisterButton = (event) =>{
-   event.preventDefault();
+   
     const data={
         username: this.state.username,
         password: this.state.password,
@@ -33,47 +34,46 @@ import { authenticationService } from "../../services/LogInService";
     authenticationService.register(data)
     .then(response =>{
         console.log(response);
-        
-       
     })
    
     
   }
 
     render (){
+       
         return(
             <Fragment>
            
                 <div id="signup">
                     <h3>Join us</h3>
                     <div className="registerForm">
-                    <div className="col s12">
+                        <div className="col s12">
                             <div className="top-row">
                                     <div className="fieldWwrap">
                                         <label>Username<span className="req">*</span></label>
-                                        <input onChange={this.getDataFromInputs} name="username" className="logInInput" type="text" required autoComplete="off" />
+                                        <input onChange={this.getDataFromInputs} name="username" className="logInInput validate" type="text" required autoComplete="off" />
+                                        <span className="helper-text" data-error="invalid username" ></span>
                                     </div>
                                     <div className="fieldWwrap">
                                         <label>Name<span className="req">*</span></label>
-                                        <input onChange={this.getDataFromInputs} name="name" className="logInInput" type="text" required autoComplete="off" />
+                                        <input onChange={this.getDataFromInputs} name="name" className="logInInput validate" type="text" required autoComplete="off" />
+                                        <span className="helper-text" data-error="invalid name" ></span>
                                     </div>
                             </div>
-                                    <div className="fieldWrap input-field col s12">
+                                    <div className="fieldWrap">
                                         <label>Email address<span className="req">*</span></label>
                                         <input onChange={this.getDataFromInputs} name="email" id="email" className="logInInput validate" type="email" required autoComplete="off" />
-                                        <span className="helper-text" data-error="invalid email" data-success="right"></span>
+                                        <span className="helper-text" data-error="invalid email"></span>
                                     </div>
                                     <div className="fieldWrap">
                                         <label>Password<span className="req">*</span></label>
                                         <input onChange={this.getDataFromInputs} name="password" className="logInInput" type="password" required autoComplete="off"/>
+                                        <span className="helper-text" data-error="invalid password"></span>
                                     </div>
-                                    <button onClick={this.onRegisterButton} className="button button-block">Sign up</button>
+                                    <button onClick={this.onRegisterButton} className="btn btnLogIn" >Create Account</button>
                         </div>
                     </div>
-                        <div className="lorem hide-on-med-and-down">
-                            <h2>Bit book Register</h2>
-                            <p className="loremText">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                        </div>
+                      
                 </div>
             </Fragment>
             

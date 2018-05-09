@@ -112,8 +112,8 @@ export class EditProfile extends Component {
                                              <label className="active" htmlFor="textarea1">About</label>
                                      </div>
                                     
-                                    <a onClick={this.handleCloseModal} className="waves-light btn">Close</a>
-                                    <a onClick={this.onUpdateProfile} className=" waves-light btn">Update</a>
+                                    <a onClick={this.handleCloseModal} className="btn">Close</a>
+                                    <a onClick={this.onUpdateProfile} className="btn light">Update</a>
                             </div>
                    
                         </div>

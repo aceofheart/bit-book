@@ -8,55 +8,63 @@
     position: fixed;
     top: 0;
     left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
+.helper-text{
+    margin:0
+}
+
+
 a{
     text-decoration: none;
     color: #000;
     transition: .3s ease;
 }
+
+
 a:hover{
     color: #bebebe
 }
+
+
 .form{
     background: rgba(240, 240, 240, 0.6);
     padding: 27px;
-    width: 35%;
-    margin: 7%;
+    width: 30%;
+    margin-right:40px;
     border-radius: 4px;
     box-shadow: 0 2px 5px 2px rgba(19, 35, 47, 0.3);
     transition: .3s ease;
 }
-@media only screen and (max-width: 930px) {
-    .form {
-        width: 60%;
-        margin-left: 18%;
-        margin-right: 18%;
-    }
-}
-@media only screen and (max-width: 600px) {
-    .form {
-        width: 90%;
-        margin: 5%;
-    }
-}
+
 .form:hover{
     box-shadow: 0 0px 10px 10px rgba(122, 122, 122, 0.2)
 }
+
+
 .tab-group{
     list-style: none;
     padding: 0;
-    margin: 0 0 20px 0;
+    margin: 0 0 0px 0;
 }
+
+
 .tab-group:after{
     content: "";
     display: table;
     clear: both;
 }
-.tab-group li a{
+
+
+.tab-group li div{
     display: block;
     text-decoration: none;
     padding: 15px;
-    background: rgb(75, 75, 75);
+    background: rgb(94, 94, 94);
     color:#fff;
     font-size: 20px;
     float: left;
@@ -64,14 +72,31 @@ a:hover{
     text-align: center;
     cursor: pointer;
 }
-.tab-group li a:hover{
-    background: #099685;
+
+
+.tab-group li div:hover{
+    background: #2dad9e;
     color: #fff;
 }
-.tab-group .active a{
+
+
+.tab-group li.active div{
     background: #099685;
-    color: #fff
+    color: #fff;
+    box-shadow: none;
 }
+
+
+.form .line{
+    width: 100%;
+    height: 3px;
+    margin-bottom: 15px;
+    background-color: #099685;
+  
+     
+}
+
+
 
 h3{
     text-align: center;
@@ -80,78 +105,136 @@ h3{
     margin: 0 0 20px;
     font-size: 25px
 }
+
+
 h2{
     margin-left: 30px
 }
+
+
 label{
   
     left:13px;
     color: rgba(0,0,0, 0.7);
     font-size: 18px;
 }
+
+
 label span{
     margin: 2px;
     color: red;
 }
-input, textarea{
-    font-size:  18px;
-    display: block;
-    width: 100%;
-    padding: 5px 10px;
-    background: none;
-    background-image: none;
-    border: 2px solid #666;
-    color: #000;
-    border-radius: 0;
 
-}
 
 .fieldWrap{
     position: relative;
     margin-bottom: 10px;
 }
+
+
 .top-row:after{
     content: "";
     display: table;
     clear: both;
 }
+
+
 .top-row > div{
     float: left;
     width: 48%;
     margin-right: 4%
 }
+
+
 .top-row > div:last-child{
     margin: 0;
 }
-.button{
+
+
+.btnLogIn{
     border:0;
     outline:none;
     border-radius: 2px;
-    padding: 15px 0;
-    font-size: 1.5rem;
-    font-weight: 500;
+    font-size: 1.3rem;
+    font-weight: 400;
     text-transform: uppercase;
-    letter-spacing: .1em;
+    letter-spacing: .01em;
     background: #099685;
     color:#fff;
-
+    width: 100%
+    
 }
-.button-block{
-    display: block;
-    width: 100%;
 
-}
+
 .lorem{
-    position: absolute;
-    top:100px;
-    left:48%;
-    display: inline-block;
+    font-family: "Arsenal", sans-serif;
     width: 40%;
+    margin-left: 50px
 }
+
+
 .loremText{
     color: rgb(53, 53, 53)
 }
+
+
 ::placeholder{
     color: black;
     opacity: 1
+}
+
+@media only screen and (max-width: 992px) {
+    .form {
+        width: 40%;
+        
+    }
+    .lorem{
+        margin-left: 0
+    }
+}
+
+@media only screen and (max-width: 600px) {
+   .login-background{
+        flex-wrap: wrap-reverse
+   }
+   .form {
+        width: 80%;
+        height:57%;
+        margin: 10px auto
+    }
+    .lorem{
+        width: 80%;
+        margin: auto;
+        margin-bottom: 0;
+        margin-top: 10px
+    }
+    .loremText{
+        font-size: 0.8em;
+        text-align: justify;
+        margin-bottom: 0
+    }
+    h2{
+        margin-top:10px;
+        font-size: 2.2em;
+        font-weight: bold
+    }
+    h3{
+        margin-bottom:15px
+    }
+    .tab-group li div{
+        padding: 7px;
+        font-size: 16px
+    }
+   
+    .button{
+        padding: 7px;
+        font-size: 1rem;
+    }
+    .fieldWrap{
+        margin-bottom: 0
+    }
+    label{
+        font-size: 14px
+    }
+   
 }

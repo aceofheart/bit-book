@@ -4,5 +4,5 @@ const header = {
     "Key": "337335F",
 
 }
-const urlBase = "http://bitbookapi.azurewebsites.net";
+const urlBase = "https://bitbookapi.azurewebsites.net";
 export { header, urlBase}

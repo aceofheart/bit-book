@@ -64,7 +64,7 @@ export class PostDetails extends Component {
             })
         })
         .then(() =>{
-            window.location.hash="#/feed"
+            window.location.hash="#/"
         })
         
 
@@ -157,7 +157,7 @@ export class PostDetails extends Component {
                     <div className="file-field input-field " style={{marginTop: "50px"}}>
                         <div className="file-path-wrapper">
                             <input onChange={this.getCommentValueHandler} value={this.state.commentBody} className="materialize-textarea black-text" placeholder="Add your comment" type="text" />
-                        <button onClick={this.postComment} disabled={!this.state.commentBody} className="btn  waves-light right center-text" type="submit" name="action">Send
+                        <button onClick={this.postComment} disabled={!this.state.commentBody} className="btn right center-text" type="submit" name="action">Send
                       </button>
                         </div>
                     </div>
