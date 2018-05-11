@@ -2,6 +2,7 @@ import React,{ Component, Fragment} from "react";
 import "./LogIn.css";
 import { withRouter } from 'react-router-dom';
 import { authenticationService } from "../../services/LogInService";
+import { userService } from "../../services/UserService";
 
  class RegisterPage extends Component {
     state={
@@ -9,7 +10,13 @@ import { authenticationService } from "../../services/LogInService";
         name: null,
         email: null,
         password: null,
+        users:[]
     }
+    passwordValidation = (password) =>{
+        const re = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
+        return re.test(password);
+    }
+ 
     
     getDataFromInputs = (event) =>{
         const target = event.target;
@@ -19,25 +26,23 @@ import { authenticationService } from "../../services/LogInService";
          this.setState({
             [name]: value
         });
-  }
+    }
 
   onRegisterButton = (event) =>{
-   
+ 
     const data={
         username: this.state.username,
         password: this.state.password,
         name: this.state.name,
         email: this.state.email
     }
-    
+   
     
     authenticationService.register(data)
     .then(response =>{
         console.log(response);
     })
-   
-    
-  }
+}
 
     render (){
        
@@ -67,7 +72,7 @@ import { authenticationService } from "../../services/LogInService";
                                     </div>
                                     <div className="fieldWrap">
                                         <label>Password<span className="req">*</span></label>
-                                        <input onChange={this.getDataFromInputs} name="password" className="logInInput" type="password" required autoComplete="off"/>
+                                        <input onChange={this.getDataFromInputs} name="password" className="logInInput validate" type="password" required autoComplete="off"/>
                                         <span className="helper-text" data-error="invalid password"></span>
                                     </div>
                                     <button onClick={this.onRegisterButton} className="btn btnLogIn" >Create Account</button>

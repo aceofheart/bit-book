@@ -26,15 +26,9 @@ class UserService {
             }
 
         }).then(response => response.json())
-            .then(response => {
-
-
+            .then(response => { 
                 return new Author(response)
-
-
             })
-
-
     }
 
     getUserListSearch = () => {
@@ -46,6 +40,8 @@ class UserService {
 
         }).then(response => response.json())
             .then(response => {
+                console.log(response);
+                
                 return response.map((user) => new User(user))
 
             })

@@ -16,7 +16,5 @@ export class User {
             return (`${day}-${month + 1}-${year} at ${hour}:${min}`)
         }
     }
-
-
 }
 

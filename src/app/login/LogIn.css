@@ -161,7 +161,8 @@ label span{
     letter-spacing: .01em;
     background: #099685;
     color:#fff;
-    width: 100%
+    width: 100%;
+    height: 45px;
     
 }
 
